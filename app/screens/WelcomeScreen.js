@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, ImageBackground, StyleSheet, Image, Text} from 'react-native';
-import AppButton from '../components/AppButton';
-import colors from '../config/colors';
+import {View, ImageBackground, StyleSheet} from 'react-native';
+import {AppButton, AppLogo} from '../components';
 
 const WelcomeScreen = () => {
   return (
@@ -9,15 +8,7 @@ const WelcomeScreen = () => {
       style={styles.background}
       source={require('../assets/background1.jpg')}
       blurRadius={3}>
-      <View style={styles.logoContainer}>
-        <Image
-          style={styles.logo}
-          source={require('../assets/logoDoneDone.png')}
-        />
-        <Text style={styles.logoText}>
-          Give Away What You Don't Need Anymore!
-        </Text>
-      </View>
+      <AppLogo text={"Give Away What You Don't Need Anymore!"} />
       <View style={styles.buttonsContainer}>
         <AppButton title="Login" onPress={() => console.log('tapped')} />
         <AppButton title="Register" color="secondary" />
@@ -31,13 +22,4 @@ export default WelcomeScreen;
 const styles = StyleSheet.create({
   background: {flex: 1, justifyContent: 'flex-end', alignItems: 'center'},
   buttonsContainer: {width: '100%', padding: 20},
-  logo: {width: 200, height: 200},
-  logoContainer: {position: 'absolute', top: 10, alignItems: 'center'},
-  logoText: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: colors.gray,
-    position: 'relative',
-    bottom: 30,
-  },
 });

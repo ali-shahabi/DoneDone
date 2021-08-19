@@ -1,21 +1,21 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import colors from '../config/colors';
-import AppText from './AppText';
+import {AppText} from '.';
 
-const Card = ({image, title, price}) => {
+const AppCard = ({image, title, subTitle}) => {
   return (
     <View style={styles.card}>
       <Image source={image} style={styles.image} />
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.subTitle}>{price}</AppText>
+        <AppText style={styles.subTitle}>{subTitle}</AppText>
       </View>
     </View>
   );
 };
 
-export default Card;
+export default AppCard;
 
 const styles = StyleSheet.create({
   card: {borderRadius: 15, backgroundColor: colors.white, marginBottom: 20},
