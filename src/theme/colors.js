@@ -10,5 +10,13 @@ export default {
   grey_3: '#a1a1a1',
   danger: '#ff5252',
   yellow: '#ffe66d',
+  orange: 'orange',
+  green: 'green',
+  aquamarine: 'aquamarine',
+  brown: 'brown',
+  blueVelvet: '#8a2be2',
+  cornflowerBlue: '#6495ED',
+  darkOrange: '#FF8C00',
+  darkSlateBlue: '#483D8B',
   transparent: '#00000000',
 };

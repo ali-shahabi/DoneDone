@@ -13,7 +13,14 @@ import AppIcon from './AppIcon';
 import {AppSelectOption, AppText} from '.';
 import firstLetterToUpperCase from '../utils/firstLetterToUpperCase';
 
-const AppSelect = ({icon, items, title, selectedItem, onSelectItem}) => {
+const AppSelect = ({
+  icon,
+  items,
+  title,
+  selectedItem,
+  onSelectItem,
+  numberOfColumns,
+}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedOption, setSelectedOption] = useState(false);
 
@@ -49,13 +56,16 @@ const AppSelect = ({icon, items, title, selectedItem, onSelectItem}) => {
       <SafeAreaView>
         <Modal visible={modalVisible} animationType="slide">
           <Button
-            color={colors.primary}
+            color={colors.danger}
             title="close"
             onPress={() => setModalVisible(false)}
           />
           <FlatList
+            style={styles.flatList}
             data={items}
-            keyExtractor={item => item.id.toString()}
+            key={'_'}
+            keyExtractor={item => '_' + item.id.toString()}
+            numColumns={numberOfColumns}
             renderItem={({item}) => (
               <AppSelectOption
                 item={item}
@@ -81,6 +91,7 @@ const styles = StyleSheet.create({
     marginVertical: 1,
     alignItems: 'center',
   },
+  flatList: {paddingVertical: 10},
   textBlack: {flex: 1, fontSize: 18, color: colors.black_1, paddingLeft: 5},
   textGrey: {flex: 1, fontSize: 18, color: colors.grey_3, paddingLeft: 5},
 });

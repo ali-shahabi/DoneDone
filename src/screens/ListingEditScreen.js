@@ -15,41 +15,46 @@ const items = [
     id: 1,
     label: 'clothing',
     icon: 'email',
-    iconBackgroundColor: colors.secondary,
+    iconBackgroundColor: colors.darkSlateBlue,
   },
   {
     id: 2,
     label: 'digital',
     icon: 'email',
-    iconBackgroundColor: colors.secondary,
+    iconBackgroundColor: colors.orange,
   },
   {
     id: 3,
     label: 'furniture',
     icon: 'email',
-    iconBackgroundColor: colors.secondary,
+    iconBackgroundColor: colors.danger,
   },
-  {id: 4, label: 'cars', icon: 'email', iconBackgroundColor: colors.secondary},
+  {id: 4, label: 'cars', icon: 'email', iconBackgroundColor: colors.darkOrange},
   {id: 5, label: 'games', icon: 'email', iconBackgroundColor: colors.secondary},
   {
     id: 6,
     label: 'sports',
     icon: 'email',
-    iconBackgroundColor: colors.secondary,
+    iconBackgroundColor: colors.green,
   },
   {
     id: 7,
     label: 'movies',
     icon: 'email',
-    iconBackgroundColor: colors.secondary,
+    iconBackgroundColor: colors.aquamarine,
   },
-  {id: 8, label: 'music', icon: 'email', iconBackgroundColor: colors.secondary},
-  {id: 9, label: 'books', icon: 'email', iconBackgroundColor: colors.secondary},
+  {id: 8, label: 'music', icon: 'email', iconBackgroundColor: colors.brown},
+  {
+    id: 9,
+    label: 'books',
+    icon: 'email',
+    iconBackgroundColor: colors.blueVelvet,
+  },
   {
     id: 10,
     label: 'other',
     icon: 'email',
-    iconBackgroundColor: colors.secondary,
+    iconBackgroundColor: colors.cornflowerBlue,
   },
 ];
 
@@ -99,6 +104,7 @@ const ListingEditScreen = () => {
             name="category"
             placeholder="Category"
             items={items}
+            numberOfColumns={3}
           />
           <AppFormFieldInput
             maxLength={255}

@@ -6,7 +6,10 @@ import colors from '../theme/colors';
 
 const AppSelectOption = ({item, onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity
+      activeOpacity={0.5}
+      onPress={onPress}
+      style={styles.container}>
       {item.icon && (
         <AppIcon
           name={item.icon}
@@ -23,6 +26,11 @@ const AppSelectOption = ({item, onPress}) => {
 export default AppSelectOption;
 
 const styles = StyleSheet.create({
-  container: {padding: 20},
-  text: {fontSize: 16},
+  container: {
+    paddingHorizontal: 20,
+    width: '33%',
+    paddingVertical: 10,
+    alignItems: 'center',
+  },
+  text: {fontSize: 16, paddingTop: 10, textAlign: 'center'},
 });

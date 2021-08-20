@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import ListingDetailsScreen from './src/screens/ListingDetailsScreen';
 import ListingEditScreen from './src/screens/ListingEditScreen';
 
 const App = () => {
