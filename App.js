@@ -7,15 +7,11 @@
  */
 
 import React from 'react';
-import AccountScreen from './app/screens/AccountScreen';
-import LoginScreen from './app/screens/LoginScreen';
+import ListingDetailsScreen from './src/screens/ListingDetailsScreen';
+import ListingEditScreen from './src/screens/ListingEditScreen';
 
 const App = () => {
-  return (
-    <>
-      <LoginScreen />
-    </>
-  );
+  return <ListingEditScreen />;
 };
 
 export default App;
