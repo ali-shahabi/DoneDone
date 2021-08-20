@@ -13,6 +13,7 @@ const AppListItem = ({
   renderRightActions,
   renderLeftActions,
   IconComponent,
+  chevronIcon,
 }) => {
   return (
     <Swipeable
@@ -32,11 +33,13 @@ const AppListItem = ({
               </AppText>
             )}
           </View>
-          <MaterialCommunityIcons
-            color={colors.grey_1}
-            name="chevron-right"
-            size={25}
-          />
+          {chevronIcon && (
+            <MaterialCommunityIcons
+              color={colors.grey_1}
+              name="chevron-right"
+              size={25}
+            />
+          )}
         </View>
       </TouchableHighlight>
     </Swipeable>

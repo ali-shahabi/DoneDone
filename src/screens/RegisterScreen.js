@@ -7,6 +7,7 @@ import {
   AppFormSubmitButton,
   AppSafeAreaView,
 } from '../components';
+import colors from '../theme/colors';
 
 const validationSchema = Yup.object().shape({
   username: Yup.string().required().label('Name'),
@@ -14,10 +15,11 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label('Password'),
 });
 
-const RegisterScreen = () => {
+const RegisterScreen = ({navigation}) => {
   const onSubmit = values => {
     console.log(values);
     Keyboard.dismiss();
+    navigation.navigate('Account');
   };
 
   return (
@@ -64,6 +66,6 @@ const RegisterScreen = () => {
 export default RegisterScreen;
 
 const styles = StyleSheet.create({
-  container: {padding: 20},
+  container: {padding: 20, backgroundColor: colors.white},
   textInput: {flex: 1},
 });

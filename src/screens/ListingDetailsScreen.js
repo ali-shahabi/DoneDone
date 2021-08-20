@@ -1,10 +1,10 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {AppText, AppListItemDetailsInfo} from '../components';
 
 import colors from '../theme/colors';
 
-const ListingDetailsScreen = () => {
+const ListingDetailsScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image
@@ -14,13 +14,17 @@ const ListingDetailsScreen = () => {
       <View style={styles.details}>
         <AppText style={styles.title}>Red Jacket For Sale</AppText>
         <AppText style={styles.subTitle}>$100</AppText>
-        <View style={styles.userContainer}>
-          <AppListItemDetailsInfo
-            title="Lisa Rogers"
-            subTitle="5 Listings"
-            image={require('../assets/images/avatar.jpg')}
-          />
-        </View>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() => navigation.navigate('Account')}>
+          <View style={styles.userContainer}>
+            <AppListItemDetailsInfo
+              title="Lisa Rogers"
+              subTitle="5 Listings"
+              image={require('../assets/images/avatar.jpg')}
+            />
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

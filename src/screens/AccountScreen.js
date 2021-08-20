@@ -13,14 +13,27 @@ const menuItems = [
   {
     title: 'My Listings',
     icon: {name: 'format-list-bulleted', backgroundColor: colors.primary},
+    navigate: 'Listings',
   },
   {
     title: 'My Messages',
-    icon: {name: 'email', backgroundColor: colors.secondary},
+    icon: {
+      name: 'email',
+      backgroundColor: colors.secondary,
+    },
+    navigate: 'Messages',
   },
 ];
 
-const AccountScreen = () => {
+const AccountScreen = ({navigation}) => {
+  const handleNavigate = item => {
+    if (item.title === 'My Messages') {
+      navigation.navigate('Messages');
+    }
+    if (item.title === 'My Listings') {
+      navigation.navigate('Listings');
+    }
+  };
   return (
     <AppSafeAreaView style={styles.appSafeAreaView}>
       <View style={styles.container}>
@@ -38,6 +51,8 @@ const AccountScreen = () => {
           renderItem={({item}) => (
             <AppListItem
               title={item.title}
+              chevronIcon
+              onPress={() => handleNavigate(item)}
               IconComponent={
                 <AppIcon
                   name={item.icon.name}
@@ -51,6 +66,7 @@ const AccountScreen = () => {
       <View style={styles.container}>
         <AppListItem
           title="Log Out"
+          onPress={() => navigation.navigate('Welcome')}
           IconComponent={
             <AppIcon name="logout" backgroundColor={colors.yellow} />
           }

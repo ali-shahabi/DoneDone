@@ -1,6 +1,6 @@
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
-import {AppSafeAreaView, AppCard} from '../components';
+import {FlatList, StyleSheet, TouchableOpacity} from 'react-native';
+import {AppSafeAreaView, AppCard, AppAddButton} from '../components';
 
 import colors from '../theme/colors';
 
@@ -25,7 +25,7 @@ const listings = [
   },
 ];
 
-const ListingsScreen = () => {
+const ListingsScreen = ({navigation}) => {
   return (
     <AppSafeAreaView style={styles.container}>
       <FlatList
@@ -33,15 +33,18 @@ const ListingsScreen = () => {
         data={listings}
         keyExtractor={listing => listing.id.toString()}
         renderItem={({item}) => (
-          <>
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => navigation.navigate('Listing Details')}>
             <AppCard
               title={item.title}
               subTitle={'$' + item.price}
               image={item.image}
             />
-          </>
+          </TouchableOpacity>
         )}
       />
+      <AppAddButton onPress={() => navigation.navigate('Listing Edit')} />
     </AppSafeAreaView>
   );
 };

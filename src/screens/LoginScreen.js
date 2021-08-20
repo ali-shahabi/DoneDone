@@ -8,18 +8,20 @@ import {
   AppLogo,
   AppSafeAreaView,
 } from '../components';
+import colors from '../theme/colors';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
   password: Yup.string().required().min(4).label('Password'),
 });
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const [logoDisplay, setLogoDisplay] = useState(true);
 
   const onSubmit = values => {
     console.log(values);
     Keyboard.dismiss();
+    navigation.navigate('Account');
   };
 
   useEffect(() => {
@@ -67,7 +69,7 @@ const LoginScreen = () => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-  container: {padding: 20},
+  container: {padding: 20, backgroundColor: colors.white},
   logoHidden: {flex: 0, display: 'none'},
   logoVisible: {flex: 1},
   textInput: {flex: 2},

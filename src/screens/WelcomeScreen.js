@@ -2,7 +2,7 @@ import React from 'react';
 import {View, ImageBackground, StyleSheet} from 'react-native';
 import {AppButton, AppLogo} from '../components';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({navigation}) => {
   return (
     <ImageBackground
       style={styles.background}
@@ -10,8 +10,12 @@ const WelcomeScreen = () => {
       blurRadius={3}>
       <AppLogo text={"Give Away What You Don't Need Anymore!"} />
       <View style={styles.buttonsContainer}>
-        <AppButton title="Login" onPress={() => console.log('tapped')} />
-        <AppButton title="Register" color="secondary" />
+        <AppButton title="Login" onPress={() => navigation.navigate('Login')} />
+        <AppButton
+          title="Register"
+          color="secondary"
+          onPress={() => navigation.navigate('Register')}
+        />
       </View>
     </ImageBackground>
   );

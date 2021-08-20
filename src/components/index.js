@@ -3,6 +3,7 @@ export {default as AppFormFieldInput} from './AppFormFieldInput';
 export {default as AppFormSubmitButton} from './AppFormSubmitButton';
 export {default as AppFormErrorMessage} from './AppFormErrorMessage';
 export {default as AppButton} from './AppButton';
+export {default as AppAddButton} from './AppAddButton';
 export {default as AppCard} from './AppCard';
 export {default as AppIcon} from './AppIcon';
 export {default as AppInput} from './AppInput';

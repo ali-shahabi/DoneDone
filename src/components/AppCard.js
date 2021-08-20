@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
   },
-  subTitle: {color: colors.secondary, fontWeight: 'bold'},
-  title: {marginBottom: 7},
+  subTitle: {color: colors.secondary, fontWeight: 'bold', minHeight: 10},
+  title: {minHeight: 0},
 });
