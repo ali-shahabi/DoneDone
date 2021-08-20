@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {FlatList} from 'react-native';
 import {
   AppSafeAreaView,
-  AppListItem,
+  AppListItemSwipeable,
   AppListItemDeleteAction,
   AppListItemSeparator,
 } from '../components';
@@ -43,13 +43,13 @@ const MessagesScreen = () => {
           setMessages(initialMessages);
         }}
         renderItem={({item}) => (
-          <AppListItem
+          <AppListItemSwipeable
             title={item.title}
             subTitle={item.description}
             image={item.image}
-            // renderRightActions={() => (
-            //   <AppListItemDeleteAction onPress={() => handleDelete(item)} />
-            // )}
+            renderRightActions={() => (
+              <AppListItemDeleteAction onPress={() => handleDelete(item)} />
+            )}
           />
         )}
       />
