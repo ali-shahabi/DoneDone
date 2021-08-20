@@ -8,6 +8,7 @@ export {default as AppCard} from './AppCard';
 export {default as AppIcon} from './AppIcon';
 export {default as AppInput} from './AppInput';
 export {default as AppListItem} from './AppListItem';
+export {default as AppListItemSwipeable} from './AppListItemSwipeable';
 export {default as AppListItemDeleteAction} from './AppListItemDeleteAction';
 export {default as AppListItemDetailsInfo} from './AppListItemDetailsInfo';
 export {default as AppListItemSeparator} from './AppListItemSeparator';

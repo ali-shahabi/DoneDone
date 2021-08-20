@@ -32,12 +32,12 @@ const App = () => {
         }}>
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Account" component={AccountScreen} />
-        <Stack.Screen name="Listing Edit" component={ListingEditScreen} />
-        <Stack.Screen name="Listing Details" component={ListingDetailsScreen} />
-        <Stack.Screen name="Listings" component={ListingsScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="Account" component={AccountScreen} />
+        <Stack.Screen name="Listings" component={ListingsScreen} />
         <Stack.Screen name="Messages" component={MessagesScreen} />
+        <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} />
+        <Stack.Screen name="ListingEdit" component={ListingEditScreen} />
         <Stack.Screen name="View Image" component={ViewImageScreen} />
       </Stack.Navigator>
     </NavigationContainer>

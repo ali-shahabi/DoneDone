@@ -1,19 +1,19 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableHighlight, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import colors from '../theme/colors';
 import {AppText} from '.';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const AppListItem = ({
+const AppListItemSwipeable = ({
   image,
   title,
   subTitle,
-  onPress,
+  renderRightActions,
   IconComponent,
-  chevronIcon,
 }) => {
   return (
-    <TouchableHighlight underlayColor={colors.grey_2} onPress={onPress}>
+    <Swipeable renderRightActions={renderRightActions}>
       <View style={styles.container}>
         {IconComponent}
         {image && <Image style={styles.image} source={image} />}
@@ -27,19 +27,17 @@ const AppListItem = ({
             </AppText>
           )}
         </View>
-        {chevronIcon && (
-          <MaterialCommunityIcons
-            color={colors.grey_1}
-            name="chevron-right"
-            size={25}
-          />
-        )}
+        <MaterialCommunityIcons
+          color={colors.grey_1}
+          name="chevron-right"
+          size={25}
+        />
       </View>
-    </TouchableHighlight>
+    </Swipeable>
   );
 };
 
-export default AppListItem;
+export default AppListItemSwipeable;
 
 const styles = StyleSheet.create({
   container: {

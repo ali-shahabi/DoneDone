@@ -35,7 +35,7 @@ const ListingsScreen = ({navigation}) => {
         renderItem={({item}) => (
           <TouchableOpacity
             activeOpacity={0.5}
-            onPress={() => navigation.navigate('Listing Details')}>
+            onPress={() => navigation.navigate('ListingDetails')}>
             <AppCard
               title={item.title}
               subTitle={'$' + item.price}
@@ -44,7 +44,7 @@ const ListingsScreen = ({navigation}) => {
           </TouchableOpacity>
         )}
       />
-      <AppAddButton onPress={() => navigation.navigate('Listing Edit')} />
+      <AppAddButton onPress={() => navigation.navigate('ListingEdit')} />
     </AppSafeAreaView>
   );
 };

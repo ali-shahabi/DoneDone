@@ -44,13 +44,12 @@ const MessagesScreen = () => {
         }}
         renderItem={({item}) => (
           <AppListItem
-            onPress={() => console.log('message selected', item)}
             title={item.title}
             subTitle={item.description}
             image={item.image}
-            renderRightActions={() => (
-              <AppListItemDeleteAction onPress={() => handleDelete(item)} />
-            )}
+            // renderRightActions={() => (
+            //   <AppListItemDeleteAction onPress={() => handleDelete(item)} />
+            // )}
           />
         )}
       />

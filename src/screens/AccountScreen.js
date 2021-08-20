@@ -9,31 +9,7 @@ import {
 
 import colors from '../theme/colors';
 
-const menuItems = [
-  {
-    title: 'My Listings',
-    icon: {name: 'format-list-bulleted', backgroundColor: colors.primary},
-    navigate: 'Listings',
-  },
-  {
-    title: 'My Messages',
-    icon: {
-      name: 'email',
-      backgroundColor: colors.secondary,
-    },
-    navigate: 'Messages',
-  },
-];
-
 const AccountScreen = ({navigation}) => {
-  const handleNavigate = item => {
-    if (item.title === 'My Messages') {
-      navigation.navigate('Messages');
-    }
-    if (item.title === 'My Listings') {
-      navigation.navigate('Listings');
-    }
-  };
   return (
     <AppSafeAreaView style={styles.appSafeAreaView}>
       <View style={styles.container}>
@@ -44,23 +20,25 @@ const AccountScreen = ({navigation}) => {
         />
       </View>
       <View style={styles.container}>
-        <FlatList
-          data={menuItems}
-          keyExtractor={menuItem => menuItem.title}
-          ItemSeparatorComponent={AppListItemSeparator}
-          renderItem={({item}) => (
-            <AppListItem
-              title={item.title}
-              chevronIcon
-              onPress={() => handleNavigate(item)}
-              IconComponent={
-                <AppIcon
-                  name={item.icon.name}
-                  backgroundColor={item.icon.backgroundColor}
-                />
-              }
+        <AppListItem
+          title="My Listings"
+          chevronIcon
+          onPress={() => navigation.navigate('Listings')}
+          IconComponent={
+            <AppIcon
+              name="format-list-bulleted"
+              backgroundColor={colors.primary}
             />
-          )}
+          }
+        />
+        <AppListItemSeparator />
+        <AppListItem
+          title="My Messages"
+          chevronIcon
+          onPress={() => navigation.navigate('Messages')}
+          IconComponent={
+            <AppIcon name="email" backgroundColor={colors.secondary} />
+          }
         />
       </View>
       <View style={styles.container}>

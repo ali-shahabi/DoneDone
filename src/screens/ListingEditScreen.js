@@ -14,46 +14,61 @@ const items = [
   {
     id: 1,
     label: 'clothing',
-    icon: 'email',
+    icon: 'hanger',
     iconBackgroundColor: colors.darkSlateBlue,
   },
   {
     id: 2,
     label: 'digital',
-    icon: 'email',
+    icon: 'laptop',
     iconBackgroundColor: colors.orange,
   },
   {
     id: 3,
     label: 'furniture',
-    icon: 'email',
+    icon: 'sofa-single-outline',
     iconBackgroundColor: colors.danger,
   },
-  {id: 4, label: 'cars', icon: 'email', iconBackgroundColor: colors.darkOrange},
-  {id: 5, label: 'games', icon: 'email', iconBackgroundColor: colors.secondary},
+  {
+    id: 4,
+    label: 'cars',
+    icon: 'car-outline',
+    iconBackgroundColor: colors.darkOrange,
+  },
+  {
+    id: 5,
+    label: 'games',
+    icon: 'controller-classic-outline',
+    iconBackgroundColor: colors.secondary,
+  },
   {
     id: 6,
     label: 'sports',
-    icon: 'email',
+    icon: 'basketball',
     iconBackgroundColor: colors.green,
   },
   {
     id: 7,
     label: 'movies',
-    icon: 'email',
+    icon: 'movie-open',
     iconBackgroundColor: colors.aquamarine,
   },
-  {id: 8, label: 'music', icon: 'email', iconBackgroundColor: colors.brown},
+  {
+    id: 8,
+    label: 'music',
+    icon: 'music-note-eighth',
+    iconBackgroundColor: colors.brown,
+  },
   {
     id: 9,
     label: 'books',
-    icon: 'email',
+    icon: 'book-open-variant',
     iconBackgroundColor: colors.blueVelvet,
   },
   {
     id: 10,
     label: 'other',
-    icon: 'email',
+    icon: 'dots-horizontal',
     iconBackgroundColor: colors.cornflowerBlue,
   },
 ];
@@ -65,10 +80,11 @@ const validationSchema = Yup.object().shape({
   description: Yup.string().label('Description'),
 });
 
-const ListingEditScreen = () => {
+const ListingEditScreen = ({navigation}) => {
   const onSubmit = values => {
     console.log(values);
     Keyboard.dismiss();
+    navigation.navigate('Listings');
   };
 
   return (
@@ -125,6 +141,6 @@ const ListingEditScreen = () => {
 export default ListingEditScreen;
 
 const styles = StyleSheet.create({
-  container: {padding: 20},
+  container: {padding: 20, backgroundColor: colors.white},
   textInput: {flex: 1},
 });
